@@ -14,3 +14,16 @@ build:
 
   post_ci:
     - echo "true"
+
+integrations:
+  notifications:
+    - integrationName: meow-shippable
+      type: slack
+      recipients:
+        - "#meow"
+      branches:
+        only:
+          - master
+          - dev
+      on_success: always
+      on_failure: always
